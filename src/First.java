@@ -1,5 +1,6 @@
 // Java Package --> java.lang
 // Java Primitive Data Types
+import java.util.Scanner;
 class First {
     // If you want to create a java executable file, you should have a main method
     /*
@@ -98,11 +99,11 @@ class First {
         // F        T       F
         // T        F       F
         // T        T       T
-        if( (10 > 100) && (20 < 100) ) {
-            System.out.println("true");
-        } else {
-            System.out.println("false");
-        }
+//        if( (10 > 100) && (20 < 100) ) {
+//            System.out.println("true");
+//        } else {
+//            System.out.println("false");
+//        }
 
 
         // OR Gate ->
@@ -111,20 +112,101 @@ class First {
         // F        T       T
         // T        F       T
         // T        T       T
-        if( (10 > 100) || (20 < 100) ) {
-            System.out.println("true");
-        } else {
-            System.out.println("false");
-        }
+//        if( (10 > 100) || (20 < 100) ) {
+//            System.out.println("true");
+//        } else {
+//            System.out.println("false");
+//        }
 
         // NOT Gate ->
         // i/p A    o/p
         // F         T
         // T         F
-        if( !(100 < 1) ) {
-            System.out.println("False");
-        } else {
-            System.out.println("True");
+//        if( !(100 < 1) ) {
+//            System.out.println("False");
+//        } else {
+//            System.out.println("True");
+//        }
+
+        // string = "Hello";
+        //       [0, 1, 2, 3, 4]
+        //str = ['H', 'e', 'l', 'l', 'o'];
+
+        // Q.1 -> You are given with a user number input, your job is to verify is the i/p is +ve, -ve or zero, and print it.
+
+        // create the object of the Scanner class
+        // SYNTAX -> ClassName objectName = new ClassName();
+//        Scanner sc = new Scanner(System.in);
+//        // Those object comes preloaded with pre-defined functions(methods) .
+//        int input_number = sc.nextInt();
+//        if(input_number > 0) {
+//            System.out.println("It is a +ve Number");
+//        } else if(input_number < 0) {
+//            System.out.println("It is a -ve Number");
+//        } else {
+//            System.out.println("It is a 0 Number");
+//        }
+
+
+        // Q.2 -> You are given with an integer i/p, based on the input, evaluate if the input_number is even or odd.
+//        Scanner sc = new Scanner(System.in);
+//        int input_number = sc.nextInt();        // 50
+//
+//        // int output = input_number / 2;          // Division Operator (/) - Quotient
+//        int remainder = input_number % 2;          // Modulus Operator (%) - Remainder
+//
+//        // for any even no, division by 2, yields remainder 0
+//        // any number when divided by 2 yielding remainder 0, is an even number
+//        if(remainder == 0) {
+//            System.out.println("Number is EVEN");
+//        } else {
+//            System.out.println("Number is ODD");
+//        }
+
+        // Q.3 -> You are given with a character i/p, you are supposed to check if that i/p is a vowel or consonant.
+//        Scanner sc = new Scanner(System.in);
+//        char myChar = sc.next().charAt(0);
+//
+//        // a, e, i, o, u + A, E, I, O, U
+//        if(myChar == 'a' || myChar == 'e' || myChar == 'i' || myChar == 'o' || myChar == 'u' || myChar == 'A' || myChar == 'E' || myChar == 'I' || myChar == 'O' || myChar == 'U' ) {
+//            System.out.println("Vowels");
+//        } else {
+//            System.out.println("Consonant");
+//        }
+
+        // TYPECASTING..
+
+        // LOOPS --->
+        // 1. for loop -
+        // Q :- what is the purest form of a for loop ===> for(;;)
+        // for(declaration + initialization(start); condition(meet for the end); inc/dec)
+
+        // print real nos from 1 to 51
+//        int i;
+//        for(i=1; i <= 51; i+=1) {
+//            System.out.print(i + ", ");
+//        }
+//        System.out.println();
+
+//        for(int i=1; i <= 51; i+=1) {
+//            System.out.print(i + ", ");
+//        }
+//        System.out.println();
+
+        // Q:- Given a number, print the standard table for the number (till 10).
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+
+        // start - number; end - number * 10; inc/dec - variable + number
+//        for(int i=number; i <= number*10; i += number) {
+//            System.out.println(number + " x " + i/7 + " = " + i);
+//        }
+
+        // start = 1, end - 10
+        for(int i=1; i <= 10; i++) {
+            System.out.println(number + " x " + i + " = " + number*i);
         }
+
+        // PATTERN PRINTING & WHILE LOOPS
     }
 }
