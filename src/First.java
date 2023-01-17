@@ -194,8 +194,8 @@ class First {
 //        System.out.println();
 
         // Q:- Given a number, print the standard table for the number (till 10).
-        Scanner sc = new Scanner(System.in);
-        int number = sc.nextInt();
+//        Scanner sc = new Scanner(System.in);
+//        int number = sc.nextInt();
 
         // start - number; end - number * 10; inc/dec - variable + number
 //        for(int i=number; i <= number*10; i += number) {
@@ -203,10 +203,84 @@ class First {
 //        }
 
         // start = 1, end - 10
-        for(int i=1; i <= 10; i++) {
-            System.out.println(number + " x " + i + " = " + number*i);
-        }
+//        for(int i=1; i <= 10; i++) {
+//            System.out.println(number + " x " + i + " = " + number*i);
+//        }
 
         // PATTERN PRINTING & WHILE LOOPS
+
+        // Q:- You are given with a value of n, you are supposed to print a right-angled triangle based on the value of n.
+        // n = 1
+        // *
+
+        // n = 2
+        // *
+        // * *
+
+        // n = 3
+        // *
+        // * *
+        // * * *
+
+        // n = 4
+        //     r r r r
+        // col *                    // row = 0, col = 0
+        // col * *                  // row = 1, col = 0 1
+        // col * * *                // row = 2, col = 0 1 2
+        // col * * * *              // row = 3,
+
+
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+
+        // Square
+        // n = 3
+        //   0 1 2
+        // 0 * * *
+        // 1 * * *
+        // 2 * * *
+
+        // row -> 0 - 2
+        // row = 0
+        // row = 1
+//        for(int row = 0; row < n; row++) {
+//            // col -> 0 - 2
+//            // col -> 00, 01, 02
+//            // col -> 10, 11, 12
+//            for(int col = 0; col < n; col++) {
+//                System.out.print("* ");
+//            }
+//            System.out.println();
+//        }
+
+//        for(int row = 0; row < n; row++) {
+//            for(int col = 0; col <= row; col++) {
+//                System.out.print("* ");
+//            }
+//            System.out.println();
+//        }
+
+
+        // 2. while Loop -
+        // Q - Keep expecting the input from the user, until the user hits 0
+        //        Scanner sc = new Scanner(System.in);
+        //        while(true) {
+        //            int n = sc.nextInt();
+        //            if( n == 0) {
+        //                // stop the loop
+        //                break;
+        //            } else {
+        //                // continue with the loop
+        //                continue;
+        //            }
+        //        }
+
+
+        // 3. do-while() -> Exit Controlled Loop
+        //        int counter = 0;
+        //        do {
+        //            // OPERATIONS
+        //            System.out.println("It works!");
+        //        } while(counter > 0);
     }
 }
