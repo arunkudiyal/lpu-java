@@ -1,10 +1,14 @@
 // Template to create real-life entities
+// java.util --> Java Collections | Java Wrapper Classes
+
 class Demo {
     // class -> properties + methods
 
+    // Data Members
     // Properties / Attributes :- Data declared in the class
-    int propertyOne;
-    String propertyTwo;
+    private int propertyZero;
+    private int propertyOne;
+    private String propertyTwo;
 
     // Constructor -> To initialise the values of the attributes
     // Two types -> 1. Default Constructor & 2. Parameterised Constructor
@@ -12,25 +16,46 @@ class Demo {
 
     }
 
-    Demo(int value1, String value2) {
-        propertyOne = value1;
-        propertyTwo = value2;
+    Demo(int value0, int value1, String value2) {
+        this.propertyZero = value0;
+        this.propertyOne = value1;
+        this.propertyTwo = value2;
     }
 
+    // Member Functions
     // methods :- Functions declared & defined inside a class
     public void display() {
-        System.out.println("Property One --> " + propertyOne);
-        System.out.println("Property Two --> " + propertyTwo);
+        System.out.println("Property One --> " + this.propertyOne);
+        System.out.println("Property Two --> " + this.propertyTwo);
+    }
+
+    // Setters --> Methods which help you update the values of the private values from the class.
+    public void setPropertyZero(int newPropertyZero) {
+        this.propertyZero = newPropertyZero;
+    }
+
+    // Getters --> Methods which help you access the private values from the class.
+    public int getPropertyZero() {
+        return this.propertyZero;
+    }
+
+    public int getPropertyOne() {
+        return this.propertyOne;
     }
 }
 
 public class ObjectOrientedProgramming {
+
+    public static int sum(int a, int b) {
+        return a + b;
+    }
+
     public static void main(String[] args) {
         // Create an Object / Instances (real-life entity) of the Demo class
         // Syntax :- ClassName objectName = new Constructor() :-> Name of the class & constructor are always same.
         // NOTE -> If you want to access attributes or methods from a class, create an object of the class
         // & access the attributes / methods by using . operator. Eg:- sc.nextInt();
-        Demo myDemoOne = new Demo(100, "String One");
+        Demo myDemoOne = new Demo(50, 100, "String One");
         // System.out.println(myDemoOne);      // Memory Address -> Demo@28a418fc -> Heap Memory
 
         // Access the properties and methods from an object. --> using . operator
@@ -40,17 +65,25 @@ public class ObjectOrientedProgramming {
         myDemoOne.display();
         System.out.println("------ x ------");
 
-        myDemoOne.propertyOne = 150;
+        // myDemoOne.propertyOne = 150;     --> Cannot access (private) declared.
         myDemoOne.display();
 
         System.out.println("------ x ------");
 
-        Demo myDemoTwo = new Demo(200, "String Two");
+        Demo myDemoTwo = new Demo(70, 200, "String Two");
         myDemoTwo.display();
 
         System.out.println("------ x ------");
 
         Demo myDemoThree = new Demo();
         myDemoThree.display();
+
+        int ans = sum(myDemoOne.getPropertyZero(), myDemoOne.getPropertyOne());
+        System.out.println("The sum of the two private properties from the class is --> " + ans);
+
+        myDemoOne.setPropertyZero(10);
+
+        int newAns = sum(myDemoOne.getPropertyZero(), myDemoOne.getPropertyOne());
+        System.out.println("The updated sum of the two private properties from the class is --> " + newAns);
     }
 }
