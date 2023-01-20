@@ -1,4 +1,4 @@
-// Java Package --> java.lang
+package com.company;// Java Package --> java.lang
 // Java Primitive Data Types
 import java.util.Scanner;
 class First {

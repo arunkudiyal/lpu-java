@@ -1,11 +1,14 @@
+package com.company;
 // Template to create real-life entities
 // java.util --> Java Collections | Java Wrapper Classes
 
+// PARENT CLASS to Test
 class Demo {
     // class -> properties + methods
 
     // Data Members
     // Properties / Attributes :- Data declared in the class
+    protected boolean sampleProperty;
     private int propertyZero;
     private int propertyOne;
     private String propertyTwo;
@@ -20,6 +23,11 @@ class Demo {
         this.propertyZero = value0;
         this.propertyOne = value1;
         this.propertyTwo = value2;
+    }
+
+    // METHOD OVERLOADING
+    public void display(String message) {
+        System.out.println("The message says :- " + message);
     }
 
     // Member Functions
@@ -44,6 +52,29 @@ class Demo {
     }
 }
 
+// CHILD CLASS of Demo
+class Test extends Demo {
+    int newProperty;
+
+    Test() {
+
+    }
+
+    Test(int value) {
+        this.newProperty = value;
+    }
+
+    public void show() {
+        System.out.println("[Test]: The value is - " + newProperty);
+    }
+}
+
+class Three extends Test {
+    Three() {
+
+    }
+}
+
 public class ObjectOrientedProgramming {
 
     public static int sum(int a, int b) {
@@ -62,28 +93,36 @@ public class ObjectOrientedProgramming {
         // Syntax -> objectName.property OR objectName.method()
         // System.out.println("The value of Property One is " + myDemoOne.propertyOne);
         // System.out.println("The value of Property Two is " + myDemoOne.propertyTwo);
-        myDemoOne.display();
-        System.out.println("------ x ------");
+        // myDemoOne.display();
+        // System.out.println("------ x ------");
 
         // myDemoOne.propertyOne = 150;     --> Cannot access (private) declared.
-        myDemoOne.display();
+        // myDemoOne.display();
 
-        System.out.println("------ x ------");
+        // System.out.println("------ x ------");
 
         Demo myDemoTwo = new Demo(70, 200, "String Two");
-        myDemoTwo.display();
+        // myDemoTwo.display();
 
-        System.out.println("------ x ------");
+        // System.out.println("------ x ------");
 
         Demo myDemoThree = new Demo();
-        myDemoThree.display();
+        // myDemoThree.display();
 
-        int ans = sum(myDemoOne.getPropertyZero(), myDemoOne.getPropertyOne());
-        System.out.println("The sum of the two private properties from the class is --> " + ans);
+        // int ans = sum(myDemoOne.getPropertyZero(), myDemoOne.getPropertyOne());
+        // System.out.println("The sum of the two private properties from the class is --> " + ans);
 
-        myDemoOne.setPropertyZero(10);
+        // myDemoOne.setPropertyZero(10);
 
-        int newAns = sum(myDemoOne.getPropertyZero(), myDemoOne.getPropertyOne());
-        System.out.println("The updated sum of the two private properties from the class is --> " + newAns);
+        // int newAns = sum(myDemoOne.getPropertyZero(), myDemoOne.getPropertyOne());
+        // System.out.println("The updated sum of the two private properties from the class is --> " + newAns);
+
+        // myDemoOne.display("This is a Demo myDemoOne Message!");
+
+        Test myTest = new Test(1000);
+        myTest.sampleProperty = false;
+        myTest.display("[From Test Object] :- This is a message!");
+
+        Three myThree = new Three();
     }
 }
