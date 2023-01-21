@@ -54,7 +54,7 @@ class Demo {
 }
 
 // CHILD CLASS / sub class / derived class  of Demo
-class Test {
+class Test extends Demo {
     int newProperty;
 
     Test() {
