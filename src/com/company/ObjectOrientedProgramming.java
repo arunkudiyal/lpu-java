@@ -2,7 +2,7 @@ package com.company;
 // Template to create real-life entities
 // java.util --> Java Collections | Java Wrapper Classes
 
-// PARENT CLASS to Test
+// PARENT CLASS / super class to Test
 class Demo {
     // class -> properties + methods
 
@@ -25,7 +25,8 @@ class Demo {
         this.propertyTwo = value2;
     }
 
-    // METHOD OVERLOADING
+    // METHOD OVERLOADING -> It is a Compile Time Process (Compile-Time Polymorphism)
+    // METHODS OVERRIDING -> It is a Run-Time Process (Run Time Polymorphism)
     public void display(String message) {
         System.out.println("The message says :- " + message);
     }
@@ -52,8 +53,8 @@ class Demo {
     }
 }
 
-// CHILD CLASS of Demo
-class Test extends Demo {
+// CHILD CLASS / sub class / derived class  of Demo
+class Test {
     int newProperty;
 
     Test() {
@@ -64,16 +65,14 @@ class Test extends Demo {
         this.newProperty = value;
     }
 
-    public void show() {
+    public void display() {
         System.out.println("[Test]: The value is - " + newProperty);
     }
 }
 
-class Three extends Test {
-    Three() {
-
-    }
-}
+    //class Three extends Demo, Test {
+    //
+    //}
 
 public class ObjectOrientedProgramming {
 
@@ -120,9 +119,9 @@ public class ObjectOrientedProgramming {
         // myDemoOne.display("This is a Demo myDemoOne Message!");
 
         Test myTest = new Test(1000);
-        myTest.sampleProperty = false;
-        myTest.display("[From Test Object] :- This is a message!");
+        // myTest.sampleProperty = false;
+        // myTest.display("[From Test Object] :- This is a message!");
 
-        Three myThree = new Three();
+        myDemoOne.display();
     }
 }
