@@ -13,7 +13,7 @@ class Demo {
     private int propertyOne;
     private String propertyTwo;
 
-    // Constructor -> To initialise the values of the attributes
+    // Constructor -> To initialise the values of the attributes while creating the object
     // Two types -> 1. Default Constructor & 2. Parameterised Constructor
     Demo() {
 
