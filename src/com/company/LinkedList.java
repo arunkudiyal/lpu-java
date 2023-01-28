@@ -20,7 +20,45 @@ public class LinkedList {
         head = null;
     }
 
-    public static LinkedList insert(LinkedList li, int data) {
+    public static LinkedList insertAtStart(LinkedList li, int data) {
+        Node newNode = new Node(data);
+        if(head == null) head = newNode;
+        else {
+            Node temp = head;
+            head = newNode;
+            head.next = temp;
+        }
+        return li;
+    }
+
+    public static LinkedList insertAfter(LinkedList li, int data1, int data2) {
+        Node newNode = new Node(data2);
+
+        if(head == null) System.out.println("LinkedList does not exist!");
+        // Trying to create 2nd Node of the LinkedList
+        else if(head.data == data1) {
+            Node nextNode = head.next;
+            head.next = newNode;
+            newNode.next = nextNode;
+        } else {
+            // Node to be inserted after (data1) exists in the middle or end of the LL
+            Node prevNode = head;
+            Node nextNode = head.next;
+            while(prevNode.data != data1) {
+                prevNode = nextNode;
+                nextNode = nextNode.next;
+            }
+            if(prevNode == null) {
+                System.out.println(data1 + " not found in the LL");
+            } else {
+                prevNode.next = newNode;
+                newNode.next = nextNode;
+            }
+        }
+        return li;
+    }
+
+    public static LinkedList insertAtEnd(LinkedList li, int data) {
         Node newNode = new Node(data);
         // If I am inserting the first element, head will be null
         if(head == null) {
@@ -72,24 +110,24 @@ public class LinkedList {
         return li;
     }
 
-    public static LinkedList deleteAtEnd(LinkedList li) {
-        // If the LL is empty
-        if(head == null) {
-            System.out.println("Linked List Empty!");
-        }
-        // If LL only contains 2 Nodes
-        else if(head.next.next == null) {
-            head.next = null;
-        }
-        // If LL contains more than 2 more (3 ... n)
-        else {
-            Node temp = head;
-            while(temp.next.next != null)
-                temp = temp.next;
-            temp.next = null;
-        }
-        return li;
-    }
+    //    public static LinkedList deleteAtEnd(LinkedList li) {
+    //        // If the LL is empty
+    //        if(head == null) {
+    //            System.out.println("Linked List Empty!");
+    //        }
+    //        // If LL only contains 2 Nodes
+    //        else if(head.next.next == null) {
+    //            head.next = null;
+    //        }
+    //        // If LL contains more than 2 more (3 ... n)
+    //        else {
+    //            Node temp = head;
+    //            while(temp.next.next != null)
+    //                temp = temp.next;
+    //            temp.next = null;
+    //        }
+    //        return li;
+    //    }
 
     public static void display(LinkedList li) {
         Node temp = head;
@@ -105,16 +143,16 @@ public class LinkedList {
         // The moment your LL is created, no data will be there & head = null
         LinkedList li = new LinkedList();
 
-        insert(li, 10);
-        insert(li, 20);
-        insert(li, 30);
-        insert(li, 40);
-        insert(li, 50);
-        insert(li, 60);
-        insert(li, 70);
-        insert(li, 80);
-        insert(li, 90);
-        insert(li, 100);
+        insertAtEnd(li, 10);
+        insertAtEnd(li, 20);
+        insertAtEnd(li, 30);
+        insertAtEnd(li, 40);
+        insertAtEnd(li, 50);
+        insertAtEnd(li, 60);
+        insertAtEnd(li, 70);
+        insertAtEnd(li, 80);
+        insertAtEnd(li, 90);
+        insertAtEnd(li, 100);
 
         li.display(li);                     // 10 20 30 40 50 60 70 80 90 100
 
@@ -132,5 +170,11 @@ public class LinkedList {
 
         li.deleteFromKey(li, 200);
         li.display(li);                     // 20 30 40 50 70 80 90
+
+        li.insertAtStart(li, 200);
+        li.display(li);                     // 200 20 30 40 50 70 80 90
+
+        li.insertAfter(li, 40, 100);
+        li.display(li);                     // 200 20 30 40 100 50 70 80 90
     }
 }
