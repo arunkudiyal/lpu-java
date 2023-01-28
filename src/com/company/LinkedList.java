@@ -20,6 +20,40 @@ public class LinkedList {
         head = null;
     }
 
+    public static int getNumberOfElements(LinkedList li) {
+        int noOfElements = 0;
+        if(head == null) return noOfElements;
+        else {
+           Node temp = head;
+           while(temp.next != null) {
+               noOfElements += 1;
+               temp = temp.next;
+           }
+        }
+        return  noOfElements + 1;
+    }
+
+    public static void printReverse(Node head) {
+        // IF YOU CAN TAKE EXTRA MEMORY AS A ARRAY / ARRAY LIST :-->
+        //        int n = getNumberOfElements(li);
+        //        int[] arr = new int[n];
+        //        int index = 0;
+        //        Node temp = head;
+        //        while(temp != null) {
+        //            arr[index] = temp.data;
+        //            index++;
+        //            temp = temp.next;
+        //        }
+        //        for(int i = n-1; i >= 0; i--)
+        //            System.out.print(arr[i] + " ");
+        //        System.out.println();
+
+        // If we can utilise the Stack memory of the RAM by using Recursion
+        if(head == null) return;
+        printReverse(head.next);
+        System.out.print(head.data + " ");
+    }
+
     public static LinkedList insertAtStart(LinkedList li, int data) {
         Node newNode = new Node(data);
         if(head == null) head = newNode;
@@ -154,27 +188,35 @@ public class LinkedList {
         insertAtEnd(li, 90);
         insertAtEnd(li, 100);
 
-        li.display(li);                     // 10 20 30 40 50 60 70 80 90 100
+        li.display(li);                                                             // 10 20 30 40 50 60 70 80 90 100
 
-        // deleteAtEnd(li);                 // 10 20 30 40
+        // deleteAtEnd(li);                                                         // 10 20 30 40
         // li.display(li);
 
         li.deleteFromKey(li, 60);
-        li.display(li);                     // 10 20 30 40 50 70 80 90 100
+        li.display(li);                                                             // 10 20 30 40 50 70 80 90 100
 
         li.deleteFromKey(li, 10);
-        li.display(li);                     // 20 30 40 50 70 80 90 100
+        li.display(li);                                                             // 20 30 40 50 70 80 90 100
 
         li.deleteFromKey(li, 100);
-        li.display(li);                     // 20 30 40 50 70 80 90
+        li.display(li);                                                             // 20 30 40 50 70 80 90
 
         li.deleteFromKey(li, 200);
-        li.display(li);                     // 20 30 40 50 70 80 90
+        li.display(li);                                                             // 20 30 40 50 70 80 90
 
         li.insertAtStart(li, 200);
-        li.display(li);                     // 200 20 30 40 50 70 80 90
+        li.display(li);                                                             // 200 20 30 40 50 70 80 90
 
         li.insertAfter(li, 40, 100);
-        li.display(li);                     // 200 20 30 40 100 50 70 80 90
+        li.display(li);                                                             // 200 20 30 40 100 50 70 80 90
+
+        int n = li.getNumberOfElements(li);
+        System.out.println("Total number of elements in the given LL is --> " + n); // 9
+
+        // li.printReverse(li);                                                        // 90 80 70 50 100 40 30 20 200
+
+        li.printReverse(head);                                                        // 90 80 70 50 100 40 30 20 200
+        System.out.println();
     }
 }
