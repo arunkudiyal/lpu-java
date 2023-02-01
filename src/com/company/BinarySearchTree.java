@@ -1,7 +1,5 @@
 package com.company;
 
-import com.sun.source.tree.Tree;
-
 class TreeNode {
     int data;
     TreeNode left, right;
