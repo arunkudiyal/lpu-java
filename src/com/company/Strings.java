@@ -44,6 +44,63 @@ public class Strings {
         int lengthOfString0 = str0.length();
         System.out.println("length of String 0 is - " + lengthOfString0);
 
-        // 4.
+        // Formatted Strings --> sout("\n"), sout("\t")
+        // 4. format() --> C/C++
+        char[] demoArr = {'h', 'e', 'l', '\t', 'o'};
+        String demoString = "Hello... my percentage is %.3f";
+        System.out.println(demoString.length());                                // 16
+
+        String formattedOutput = String.format(demoString, 92.34);
+        System.out.println(formattedOutput);                                    // Hello... my percentage is 92.34
+
+        System.out.println(String.format("Character values are %c and %c", 'a', 'b'));
+
+        // 5. substring(int startIndex, int endIndex)
+        String myName = "John Doe";
+        // Q:- Only print the first letters which is of 4 chars long
+        // Way 1 -> split
+        String[] answers = myName.split(" ");
+        System.out.println(answers[0]);
+
+        // Way 2 -> substring()
+        String mySubStr = myName.substring(0, 4);                                   // endIndex is exclusive
+        System.out.println( mySubStr );                                             // John
+
+        // 6. contains() --> Case sensitive, if you want to check, either convert into uppercase or lowercase
+        // before comparing
+
+        // 7. toUpperCase()
+        String lowerCaseName = myName.toLowerCase();
+        boolean isContained = lowerCaseName.contains("doe");
+        System.out.println(isContained);                                            // true
+
+        // 8. toLowerCase()
+        String upperCaseName = myName.toUpperCase();
+        boolean isAlsoContained = upperCaseName.contains("DOE");
+        System.out.println(isAlsoContained);                                        // true
+
+        // 9. join() --> Joining two or more strings even including with a delimiter
+        // Q -> Create a string like "hh:mm:ss" using hours, mins & secs
+        String hours = "12";
+        String minutes = "43";
+        String seconds = "51";
+
+        System.out.println( String.join(":", hours, minutes, seconds) );
+
+        String stringOne = "This is String One";
+        String stringTwo = "This is String One";
+        System.out.println(stringOne.equals(stringTwo));                            // true
+
+
+        // Q:- Convert a String object into it's char sequence ?
+        String strObject = new String("This is an original string");
+        char[] strObjCharSeq = new char[strObject.length()];
+
+        for(int i=0; i < strObject.length(); i++)
+            strObjCharSeq[i] = strObject.charAt(i);
+
+        for(int i=0; i < strObject.length(); i++)
+            System.out.print(strObjCharSeq[i] + ", ");
+        System.out.println();
     }
 }
