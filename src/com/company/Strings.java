@@ -9,7 +9,7 @@ public class Strings {
         // String str2;
         // System.out.println(str1);
         // Strings are nothing but simple array pool of characters.
-        char[] name = {'J', 'a', 'v', 'a', ' ', 'P', 'r', 'o', 'g', 'g'};           // ARRAY
+        char[] name = {'J', 'a', 'v', 'a', ' ', 'P', 'r', 'o', 'g', 'g'};         // ARRAY
         int[] integers = {0, 1, 2, 3, 4, 5};
         System.out.println(name);                                                // Address of first element
         System.out.println(name[1]);           // charAt(i)                      // 'a'
