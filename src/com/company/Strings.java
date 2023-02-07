@@ -17,7 +17,7 @@ public class Strings {
         // System.out.println(str0[1]);                                         // ERROR
 
         // STRING METHODS :- Do the manipulations at the String object
-        // 1. charAt()
+        // 1. charAt() --> Find a char at a specified index.
         for(int i=0; i < str0.length(); i++)
             System.out.print( str0.charAt(i) + "\t" );
 
