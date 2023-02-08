@@ -28,11 +28,12 @@ public class ExceptionHandling extends Exception {
             System.out.println("You encountered an IndexOutOfBoundException --> " + e);
         } catch(ArithmeticException e) {
             System.out.println("You encountered an exception --> " + e);
-        } finally {
-            // Code which is going to run even if the exception occurs
-            // Disconnect from a server / DB / perform some last min operations.
-            System.out.println("This is the 'FINALLY' Block");
         }
+        //        finally {
+        //            // Code which is going to run even if the exception occurs
+        //            // Disconnect from a server / DB / perform some last min operations.
+        //            System.out.println("This is the 'FINALLY' Block");
+        //        }
         return solution;
     }
 
